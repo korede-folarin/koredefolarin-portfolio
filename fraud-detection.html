@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Real-time Fraud Detection — Korede Folarin</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand wordmark" href="index.html">Korede Folarin</a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="projects.html">Work</a><a href="index.html#about">About</a><a href="insights.html">Insights</a><a href="#" class="resume-link">Resume ↓</a><a href="index.html#contact">Contact</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="project-hero">
+  <div class="container">
+    <div class="eyebrow">Fraud · ML · MLOps</div>
+    <h1>Real-time Fraud Detection<span style="color:var(--gold)">.</span></h1>
+    <p class="hero-copy">A production-style fraud detection system combining cost-aware decision thresholds, model comparison, explainability, monitoring and deployment controls.</p>
+    <div class="actions">
+      <a class="btn primary" href="#" aria-disabled="true" title="Add your deployed app URL here">Launch live demo ↗</a>
+      <a class="btn" href="#" aria-disabled="true" title="Add your GitHub repository URL here">View source ↗</a>
+    </div>
+    <div class="project-meta">
+      <span><strong>Role:</strong> Data Scientist / ML Engineer</span>
+      <span><strong>Stack:</strong> Python · XGBoost · MLflow · Airflow · BentoML · Docker · Streamlit</span>
+      <span><strong>Status:</strong> Portfolio case study</span>
+    </div>
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="container">
+    <div class="case-grid">
+      <div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">01 · Problem</div><h3>Fraud models fail when accuracy is treated as the objective.</h3><p>Highly imbalanced transaction data makes conventional accuracy misleading. The useful question is how much fraud can be captured at an acceptable operational and customer cost.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">02 · Approach</div><h3>Optimise the decision, not the leaderboard.</h3><p>Logistic regression, random forest and XGBoost were compared using out-of-time validation and fraud-relevant metrics. A cost-based threshold was then layered on top of the champion model.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">03 · Decisions</div><h3>Designed for trade-offs, not demos.</h3><p>AUPRC and KS were prioritised over raw accuracy. Threshold selection was separated from model training so risk appetite could change without rebuilding the model. Explainability and adverse-action style outputs were designed per transaction.</p></div>
+      </div>
+      <div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">04 · Evidence</div><h3>Strong discrimination with decision-aware gains.</h3><p>The champion XGBoost model achieved a KS of 0.924 and AUPRC of 0.869 on the project dataset. Cost-based thresholding improved fraud capture by 11.2% relative to the baseline decision point.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">05 · Reliability</div><h3>Trust is part of the architecture.</h3><p>The pipeline includes champion–challenger comparison, drift triggers, MLflow tracking, reproducible data/model versioning, API serving and a monitoring dashboard. Fairness checks are included as part of model governance.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">06 · Reflection</div><h3>Deployment changes what ‘best model’ means.</h3><p>The project reinforced that a slightly better offline score is not automatically a better production choice. Latency, explainability, threshold economics and monitoring all influence the final system.</p></div>
+      </div>
+    </div>
+
+    <div class="arch">
+      <div class="eyebrow">System architecture</div>
+      <div class="arch-flow">
+        <div class="arch-node">Transactions</div><span class="arrow">→</span><div class="arch-node">Features</div><span class="arrow">→</span><div class="arch-node">Champion model</div><span class="arrow">→</span><div class="arch-node">Cost threshold</div><span class="arrow">→</span><div class="arch-node">Decision + monitoring</div>
+      </div>
+      <div class="tag-row"><span class="tag">Fraud</span><span class="tag">XGBoost</span><span class="tag">AUPRC</span><span class="tag">KS</span><span class="tag">MLflow</span><span class="tag">BentoML</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container next-project">
+    <a href="index.html#work">← All projects</a>
+    <a href="index.html">Back to homepage →</a>
+  </div>
+</section>
+</main>
+<footer><div class="container footer-row"><span>Korede Folarin</span><span>© 2026 Korede Folarin.</span></div></footer>
+<script src="script.js"></script></body>
+</html>
