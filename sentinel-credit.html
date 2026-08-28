@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sentinel Credit — Korede Folarin</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">KF<span>.</span></a>
+    <div class="nav-links"><a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="project-hero">
+  <div class="container">
+    <div class="eyebrow">Credit Risk · ML · Decision Intelligence</div>
+    <h1>Sentinel Credit<span style="color:var(--gold)">.</span></h1>
+    <p class="hero-copy">An end-to-end BNPL risk intelligence platform for thin-file customers, combining modelling, monitoring, explainability and governance.</p>
+    <div class="actions">
+      <a class="btn primary" href="#" aria-disabled="true" title="Add your deployed app URL here">Launch live demo ↗</a>
+      <a class="btn" href="#" aria-disabled="true" title="Add your GitHub repository URL here">View source ↗</a>
+    </div>
+    <div class="project-meta">
+      <span><strong>Role:</strong> Data Scientist / ML Engineer</span>
+      <span><strong>Stack:</strong> Python · SQL · XGBoost · AWS · MLflow · Airflow · SHAP</span>
+      <span><strong>Status:</strong> Portfolio case study</span>
+    </div>
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="container">
+    <div class="case-grid">
+      <div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">01 · Problem</div><h3>Thin-file lending creates a decision problem, not just a modelling problem.</h3><p>Customers with limited bureau history can be difficult to assess using conventional signals. The project explores how behavioural, affordability and repayment evidence can be combined without hiding uncertainty.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">02 · Approach</div><h3>Model the customer journey, then engineer the decision.</h3><p>A synthetic BNPL environment was designed around customer, application and repayment grains, followed by feature engineering, challenger models, affordability logic, explainability, monitoring and governance controls.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">03 · Decisions</div><h3>Designed for trade-offs, not demos.</h3><p>Natural keys and shared SQL features were chosen to preserve consistency across training and inference. Thresholds are treated as business decisions rather than defaulting to 0.5, and model outputs are separated from policy rules.</p></div>
+      </div>
+      <div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">04 · Evidence</div><h3>Performance is only useful when it survives deployment.</h3><p>The evaluation plan includes discrimination, calibration, temporal validation, drift monitoring, fairness checks and challenger comparison. Thresholds are linked to affordability and risk appetite rather than selected in isolation.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">05 · Reliability</div><h3>Trust is part of the architecture.</h3><p>The design includes human approval points, SHAP-based explanations, drift triggers, lineage and monitoring. Synthetic data is clearly separated from real customer evidence to avoid false claims of production performance.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">06 · Reflection</div><h3>Better simulation changed the whole project.</h3><p>The data generator evolved into a hazard-based state machine because simplistic synthetic defaults produced unrealistic patterns. That redesign improved the credibility of both model development and monitoring.</p></div>
+      </div>
+    </div>
+
+    <div class="arch">
+      <div class="eyebrow">System architecture</div>
+      <div class="arch-flow">
+        <div class="arch-node">Synthetic BNPL data</div><span class="arrow">→</span><div class="arch-node">Feature store</div><span class="arrow">→</span><div class="arch-node">Risk models</div><span class="arrow">→</span><div class="arch-node">Decision policy</div><span class="arrow">→</span><div class="arch-node">Monitoring</div>
+      </div>
+      <div class="tag-row"><span class="tag">Credit Risk</span><span class="tag">Thin-file</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">Drift</span><span class="tag">Governance</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container next-project">
+    <a href="index.html#work">← All projects</a>
+    <a href="fraud-detection.html">Fraud Detection →</a>
+  </div>
+</section>
+</main>
+<footer><div class="container footer-row"><span>KF.</span><span>© 2026 Korede Folarin.</span></div></footer>
+</body>
+</html>

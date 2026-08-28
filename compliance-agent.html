@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banking Compliance Agent — Korede Folarin</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">KF<span>.</span></a>
+    <div class="nav-links"><a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="project-hero">
+  <div class="container">
+    <div class="eyebrow">Agentic AI · RAG · Compliance</div>
+    <h1>Banking Compliance Agent<span style="color:var(--gold)">.</span></h1>
+    <p class="hero-copy">An agentic AI system for reviewing lending documents against financial regulation, surfacing evidence, uncertainty and cases requiring human review.</p>
+    <div class="actions">
+      <a class="btn primary" href="#" aria-disabled="true" title="Add your deployed app URL here">Launch live demo ↗</a>
+      <a class="btn" href="#" aria-disabled="true" title="Add your GitHub repository URL here">View source ↗</a>
+    </div>
+    <div class="project-meta">
+      <span><strong>Role:</strong> AI / ML Engineer</span>
+      <span><strong>Stack:</strong> Python · LlamaIndex · Chroma · MCP · MLflow · Docker</span>
+      <span><strong>Status:</strong> Portfolio case study</span>
+    </div>
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="container">
+    <div class="case-grid">
+      <div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">01 · Problem</div><h3>Compliance review is slow, manual and evidence-heavy.</h3><p>Loan and policy documents must be checked against a large regulatory corpus. The challenge is not simply generating an answer; it is retrieving the right evidence, exposing uncertainty and making escalation explicit.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">02 · Approach</div><h3>RAG first, tools second, human judgement preserved.</h3><p>The system combines retrieval over FCA/PRA material with tool access for policy and customer context, a structured compliance reasoning layer, a deterministic confidence gate and an auditable report.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">03 · Decisions</div><h3>Designed for trade-offs, not demos.</h3><p>RAG was preferred to fine-tuning for updateability and traceable evidence. A single orchestrating flow with validation was favoured over unnecessary multi-agent complexity. Tool access is deliberately bounded.</p></div>
+      </div>
+      <div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">04 · Evidence</div><h3>Evaluation goes beyond fluent answers.</h3><p>Retrieval quality, grounding, abstention behaviour, latency and rule-based checks are treated as first-class evaluation targets. The system is designed to fail visibly when evidence quality is insufficient.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">05 · Reliability</div><h3>Trust is part of the architecture.</h3><p>Human review is triggered by uncertainty. Outputs preserve source traceability, deterministic checks and an audit trail so a confident-sounding answer is never treated as sufficient evidence by itself.</p></div>
+        <div class="case-block"><div class="eyebrow" style="color:#9b6c27">06 · Reflection</div><h3>The hardest failure was silent, not dramatic.</h3><p>An ingestion pipeline initially produced thousands of chunks while preserving raw PDF content. The lesson was to validate content quality, not just pipeline completion—successful execution does not imply successful output.</p></div>
+      </div>
+    </div>
+
+    <div class="arch">
+      <div class="eyebrow">System architecture</div>
+      <div class="arch-flow">
+        <div class="arch-node">Document intake</div><span class="arrow">→</span><div class="arch-node">Retrieval</div><span class="arrow">→</span><div class="arch-node">Compliance reasoning</div><span class="arrow">→</span><div class="arch-node">Confidence gate</div><span class="arrow">→</span><div class="arch-node">Human review / report</div>
+      </div>
+      <div class="tag-row"><span class="tag">RAG</span><span class="tag">MCP</span><span class="tag">Human-in-the-loop</span><span class="tag">Auditability</span><span class="tag">Abstention</span><span class="tag">Evaluation</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container next-project">
+    <a href="index.html#work">← All projects</a>
+    <a href="sentinel-credit.html">Sentinel Credit →</a>
+  </div>
+</section>
+</main>
+<footer><div class="container footer-row"><span>KF.</span><span>© 2026 Korede Folarin.</span></div></footer>
+</body>
+</html>
