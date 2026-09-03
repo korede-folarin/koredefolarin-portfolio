@@ -1,20 +1,16 @@
-# Korede Folarin Portfolio
+# Korede Folarin Portfolio — Live V4
 
-Static portfolio for GitHub Pages.
+Static GitHub Pages portfolio with a responsive forest / sage / ivory / champagne design system.
 
-## Pages
+## Files
 - `index.html` — homepage
 - `projects.html` — project library
-- `compliance-agent.html` — case study
-- `sentinel-credit.html` — case study
-- `fraud-detection.html` — case study
+- `compliance-agent.html`, `sentinel-credit.html`, `fraud-detection.html` — case studies
 - `insights.html` — insights placeholder
+- `styles.css` — responsive site styles
+- `script.js` — navigation, interactive expertise, animated canvases and live Three.js hero
 
-## CV placeholder
-The Resume and Download CV links currently show a placeholder message. When the final CV is ready, add the PDF to the repository and replace `href="#"` with the PDF filename plus the `download` attribute.
+## Important
+The Resume buttons currently open a placeholder modal. Replace them with a direct PDF download when the final CV is chosen.
 
-## Links
-LinkedIn and GitHub links are live. The contact email is prepared as `korede@koredefolarin.com`; activate the mailbox before relying on it publicly.
-
-
-Project case-study GitHub buttons currently open the main GitHub profile. Replace each URL with the individual project repository URL when those repositories are ready.
+The homepage uses Three.js from jsDelivr for the live 3D hero. If the CDN is unavailable, the rest of the site still works and the hero falls back gracefully.
