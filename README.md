@@ -1,16 +1,13 @@
-# Korede Folarin Portfolio — Live V4
+# Korede Folarin Portfolio — Live V5
 
-Static GitHub Pages portfolio with a responsive forest / sage / ivory / champagne design system.
+V5 replaces the procedural Three.js hero with the original high-resolution generated hero artwork.
 
-## Files
-- `index.html` — homepage
-- `projects.html` — project library
-- `compliance-agent.html`, `sentinel-credit.html`, `fraud-detection.html` — case studies
-- `insights.html` — insights placeholder
-- `styles.css` — responsive site styles
-- `script.js` — navigation, interactive expertise, animated canvases and live Three.js hero
+## Hero quality
+- Original PNG included at its full 1672 × 941 resolution.
+- No JPEG conversion and no recompression.
+- Browser scales the source responsively; the source asset itself is untouched.
+- Subtle CSS float, glow and pointer parallax create movement without distorting the artwork.
+- Reduced-motion preferences are respected.
 
-## Important
-The Resume buttons currently open a placeholder modal. Replace them with a direct PDF download when the final CV is chosen.
-
-The homepage uses Three.js from jsDelivr for the live 3D hero. If the CDN is unavailable, the rest of the site still works and the hero falls back gracefully.
+## Deployment
+Upload every file and the `assets` folder to the root of the existing GitHub Pages repository, replacing V4 files.

@@ -46,62 +46,24 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
   title.textContent = t; desc.textContent = d; list.innerHTML = items.map(i=>`<li>${i}</li>`).join('');
 }));
 
-// Lightweight 3D hero, loaded from CDN. Falls back gracefully if unavailable.
-async function initHero3D(){
-  const canvas = document.getElementById('hero3d'); if(!canvas) return;
-  try{
-    const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js');
-    const renderer = new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
-    renderer.setPixelRatio(Math.min(devicePixelRatio,1.8));
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(34,1,.1,100); camera.position.set(0,0.15,8.2);
-    const group = new THREE.Group(); scene.add(group);
-
-    const glassMat = new THREE.MeshPhysicalMaterial({color:0x57786b,transparent:true,opacity:.14,roughness:.18,metalness:.05,transmission:.7,thickness:.1,side:THREE.DoubleSide});
-    for(let i=0;i<7;i++){
-      const g = new THREE.PlaneGeometry(3.7,3.7);
-      const m = new THREE.Mesh(g,glassMat.clone());
-      m.rotation.set((i-3)*.12,(i-3)*.17,(i%2?1:-1)*(i*.05)); m.position.z=(i-3)*.16; group.add(m);
-    }
-    const core = new THREE.Mesh(new THREE.IcosahedronGeometry(1.55,1),new THREE.MeshStandardMaterial({color:0x153d33,roughness:.45,metalness:.2,transparent:true,opacity:.88}));
-    core.rotation.set(.45,.7,.2); group.add(core);
-
-    const nodeGeom = new THREE.SphereGeometry(.075,14,14);
-    const nodeMat = new THREE.MeshStandardMaterial({color:0xd7bd82,emissive:0x6c5526,emissiveIntensity:.8,metalness:.35,roughness:.25});
-    const nodes=[];
-    for(let i=0;i<26;i++){
-      const n=new THREE.Mesh(nodeGeom,nodeMat.clone());
-      const r=1.75+Math.random()*1.05, th=Math.random()*Math.PI*2, ph=Math.acos(2*Math.random()-1);
-      n.position.set(r*Math.sin(ph)*Math.cos(th),r*Math.cos(ph),r*Math.sin(ph)*Math.sin(th));
-      n.userData.base=n.scale.x=0.8+Math.random()*.9; n.scale.setScalar(n.userData.base); group.add(n); nodes.push(n);
-    }
-    const pts=[];
-    nodes.forEach((a,i)=>nodes.slice(i+1).forEach(b=>{if(a.position.distanceTo(b.position)<1.55){pts.push(a.position.clone(),b.position.clone())}}));
-    const lines = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:0xb99a58,transparent:true,opacity:.34})); group.add(lines);
-
-    const base = new THREE.Group(); scene.add(base);
-    const cyl1 = new THREE.Mesh(new THREE.CylinderGeometry(2.05,2.25,.32,64),new THREE.MeshStandardMaterial({color:0x33584c,roughness:.55,metalness:.2})); cyl1.position.y=-2.35;base.add(cyl1);
-    const cyl2 = new THREE.Mesh(new THREE.CylinderGeometry(1.7,1.9,.22,64),new THREE.MeshStandardMaterial({color:0x647d72,roughness:.45,metalness:.12})); cyl2.position.y=-2.05;base.add(cyl2);
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(1.86,.025,10,80),new THREE.MeshBasicMaterial({color:0xd7bd82})); ring.rotation.x=Math.PI/2; ring.position.y=-2.18;base.add(ring);
-
-    scene.add(new THREE.AmbientLight(0xffffff,2.1));
-    const key=new THREE.PointLight(0xffe5ad,9,15);key.position.set(3.5,4,5);scene.add(key);
-    const fill=new THREE.PointLight(0x91b7a7,7,15);fill.position.set(-4,-1,3);scene.add(fill);
-
-    let px=0,py=0; const target={x:0,y:0};
-    canvas.closest('.hero-visual')?.addEventListener('pointermove',e=>{const r=e.currentTarget.getBoundingClientRect();target.x=((e.clientX-r.left)/r.width-.5)*.35;target.y=((e.clientY-r.top)/r.height-.5)*.25});
-    canvas.closest('.hero-visual')?.addEventListener('pointerleave',()=>{target.x=0;target.y=0});
-    function resize(){const r=canvas.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();}
-    resize(); new ResizeObserver(resize).observe(canvas);
-    const clock=new THREE.Clock();
-    function tick(){
-      const t=clock.getElapsedTime(); px+=(target.x-px)*.025;py+=(target.y-py)*.025;
-      if(!reduceMotion){group.rotation.y=t*.10+px;group.rotation.x=Math.sin(t*.23)*.06-py;group.position.y=Math.sin(t*.55)*.08;nodes.forEach((n,i)=>n.scale.setScalar(n.userData.base*(1+.18*Math.sin(t*1.5+i))));}
-      renderer.render(scene,camera);requestAnimationFrame(tick);
-    } tick();
-  }catch(err){canvas.style.background='radial-gradient(circle at 50% 45%, rgba(31,78,66,.25), transparent 52%)';}
-}
-initHero3D();
+// High-resolution hero artwork with subtle pointer parallax.
+(function initHeroArtwork(){
+  const stage=document.querySelector('.hero-image-stage');
+  const motion=document.querySelector('.hero-image-motion');
+  if(!stage||!motion||reduceMotion)return;
+  let tx=0,ty=0,cx=0,cy=0,raf=0;
+  const render=()=>{
+    cx+=(tx-cx)*.075; cy+=(ty-cy)*.075;
+    motion.style.transform=`translate3d(${cx*12}px,${cy*8}px,0) rotateX(${-cy*1.2}deg) rotateY(${cx*1.5}deg)`;
+    raf=requestAnimationFrame(render);
+  };
+  stage.addEventListener('pointermove',e=>{
+    const r=stage.getBoundingClientRect();
+    tx=((e.clientX-r.left)/r.width-.5)*2; ty=((e.clientY-r.top)/r.height-.5)*2;
+  });
+  stage.addEventListener('pointerleave',()=>{tx=0;ty=0});
+  render();
+})();
 
 function fitCanvas(canvas){const r=canvas.getBoundingClientRect();const d=Math.min(devicePixelRatio,2);canvas.width=Math.max(1,r.width*d);canvas.height=Math.max(1,r.height*d);const c=canvas.getContext('2d');c.setTransform(d,0,0,d,0,0);return {c,w:r.width,h:r.height};}
 
