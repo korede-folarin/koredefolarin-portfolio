@@ -11,3 +11,5 @@ V5 replaces the procedural Three.js hero with the original high-resolution gener
 
 ## Deployment
 Upload every file and the `assets` folder to the root of the existing GitHub Pages repository, replacing V4 files.
+
+V6 note: the hero image is stored in the repository root so GitHub browser upload does not require creating an assets folder.
