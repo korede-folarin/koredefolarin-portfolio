@@ -1,12 +1,23 @@
-KOREDE FOLARIN PORTFOLIO — PREMIUM REBUILD
+KOREDE FOLARIN PORTFOLIO — CLEAN REVAMP
 
-FILES TO UPLOAD TO THE ROOT OF YOUR EXISTING GITHUB PAGES REPOSITORY:
+This is the corrected neutral-light version.
+
+VISUAL SYSTEM
+- bright ivory / off-white
+- deep forest green
+- cool sage
+- restrained champagne gold
+- no sepia / brown page backgrounds
+- reduced warmth on all imagery
+- cleaner shadows and borders
+
+UPLOAD TO ROOT OF YOUR GITHUB PAGES REPOSITORY:
 - index.html
 - styles.css
 - script.js
-- assets/  (upload the whole folder)
+- assets/  (whole folder)
 
-KEEP YOUR EXISTING FILES:
+KEEP:
 - compliance-agent.html
 - sentinel-credit.html
 - fraud-detection.html
@@ -14,7 +25,5 @@ KEEP YOUR EXISTING FILES:
 - projects.html
 - CNAME
 
-This build deliberately uses only the three real projects currently in the portfolio.
-It is designed for GitHub Pages and requires no build step.
-
-Before replacing live files, download a copy of the current repository as a backup.
+IMPORTANT:
+This package corrects the colour treatment only. The existing visual assets are still the current ones, but they are neutralised in CSS so the live site stops reading as brown.
