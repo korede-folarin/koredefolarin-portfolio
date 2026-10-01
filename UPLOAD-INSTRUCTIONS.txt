@@ -1,0 +1,29 @@
+UPLOAD-READY PORTFOLIO FILES
+
+Upload these items to the ROOT of:
+https://github.com/korede-folarin/koredefolarin-portfolio
+
+REPLACE:
+- index.html
+- styles.css
+- script.js
+
+ADD/REPLACE:
+- assets/  (upload the entire folder)
+
+KEEP UNCHANGED:
+- CNAME
+- compliance-agent.html
+- sentinel-credit.html
+- fraud-detection.html
+- projects.html
+- insights.html
+- README.md
+- decision-intelligence-hero.png
+
+The homepage links to your existing project pages and existing Insights page.
+GitHub Pages is already configured from main / (root), so after committing these files the site will redeploy automatically.
+
+If your browser still shows an old version after deployment:
+Ctrl + Shift + R
+or open https://koredefolarin.com/?v=8
