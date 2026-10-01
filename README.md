@@ -1,15 +1,17 @@
-# Korede Folarin Portfolio — Live V5
+# Korede Folarin Portfolio
 
-V5 replaces the procedural Three.js hero with the original high-resolution generated hero artwork.
+Static portfolio for GitHub Pages.
 
-## Hero quality
-- Original PNG included at its full 1672 × 941 resolution.
-- No JPEG conversion and no recompression.
-- Browser scales the source responsively; the source asset itself is untouched.
-- Subtle CSS float, glow and pointer parallax create movement without distorting the artwork.
-- Reduced-motion preferences are respected.
+## Pages
+- `index.html` — homepage
+- `projects.html` — project library
+- `compliance-agent.html` — case study
+- `sentinel-credit.html` — case study
+- `fraud-detection.html` — case study
+- `insights.html` — insights placeholder
 
-## Deployment
-Upload every file and the `assets` folder to the root of the existing GitHub Pages repository, replacing V4 files.
+## CV placeholder
+The Resume and Download CV links currently show a placeholder message. When the final CV is ready, add the PDF to the repository and replace `href="#"` with the PDF filename plus the `download` attribute.
 
-V6 note: the hero image is stored in the repository root so GitHub browser upload does not require creating an assets folder.
+## Links
+LinkedIn and GitHub links are live. The contact email is prepared as `korede@koredefolarin.com`; activate the mailbox before relying on it publicly.
